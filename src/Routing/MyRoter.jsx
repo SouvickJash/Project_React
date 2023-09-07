@@ -48,7 +48,7 @@ const MyRoter = () => {
       </>
     );
   }
-
+//public routing
   const PublicRouting = [
     {
       path: "/login",
