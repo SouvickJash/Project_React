@@ -1,0 +1,100 @@
+#register{
+   /* background: linear-gradient(rgba(8, 2, 2, 0.3), rgba(8, 2, 2, 0.3)), url('../../img/b_reg.jpg') fixed; */
+   background-size: 100% 100%;
+   padding: 40px 0;
+   margin-left: 120px !important;
+}
+pre{
+   margin-left: -100px;
+}
+.errorMsg{
+   font-family: 'ubuntu mono';
+   color: rgb(249, 249, 244) !important;
+   font-weight: 1;
+}
+a{
+   color: #cbcad7;
+   
+}
+.form_block{
+   width: 500px;
+   background-color: white;
+   border-radius: 20px;
+   margin-top: -80px;
+   margin-left: 350px !important;
+   /* margin-top: 60px !important; */
+}
+/* .form_block > h2{
+   font-family: "Wellfleet";
+   color: rgb(174, 22, 138);
+   margin-top: 80px;;
+   
+} */
+.form_block > p{
+   font-family: 'ubuntu mono';
+   color: #080202;
+}
+.form_block input{
+   background-color: transparent;
+   border: none;
+   border-bottom: 1px solid #080202;
+   border-radius: 0;
+   font-family: 'ubuntu mono';
+   transition: all 0.5s;
+}
+.form_block input::placeholder{
+   font-size: 18px;
+   font-family: 'ubuntu mono';
+   color: #080202;
+}
+/* .form_block input:focus{
+   box-shadow: none;
+   border-color: #080202;
+   background-color: #ff88004f;
+   border-radius: 10px;
+} */
+.form_block .tick input{
+   border: 1px solid #080202;
+   border-radius: 5px;
+}
+.form_block .tick input:focus{
+   background-color: transparent;
+   border-radius: 5px;
+}
+.form_block .tick label{
+   font-family: 'ubuntu mono';
+   font-size: 18px;
+   color: #080202;
+}
+.form_block .tick input{
+   transition: 0.5s;
+}
+.form_block .tick input:checked{
+   box-shadow: inset 0 0 5px 2px maroon;
+   background-color: orangered;
+}
+.form_block .password label{
+   font-family: 'wellfleet';
+}
+.form_block .password span{
+   font-family: 'ubuntu mono';
+}
+.form_block .submit{
+   border: none;
+   /* box-shadow: inset 0 0 15px maroon, inset 0 0 5px 1px #080202; */
+   color: white;
+   background-color: rgb(28, 51, 201) !important;
+   font-size: 15px;
+   font-weight: 600;
+   font-family: 'wellfleet';
+   transition: all 0.5s;
+}
+.form_block .submit:hover{
+   box-shadow: inset 0 0 15px 5px floralwhite, inset 0 0 5px 2px #080202;
+}
+.form_block .submit:focus{
+   box-shadow: inset 0 0 15px 10px rgb(21, 148, 221), inset 0 0 5px 2px #080202;
+   border: none;
+   background-color: rgb(141, 100, 85);
+   color: white;
+}
