@@ -48,12 +48,7 @@ a:hover {
    font-family: 'ubuntu mono';
    color: #080202;
 }
-/* .form_block input:focus{
-   box-shadow: none;
-   border-color: #080202;
-   background-color: #ff88004f;
-   border-radius: 10px;
-} */
+
 .form_block .tick input{
    border: 1px solid #080202;
    border-radius: 5px;
@@ -81,21 +76,27 @@ a:hover {
    font-family: 'ubuntu mono';
 }
 .form_block .submit{
-   /* border: none; */
-   /* box-shadow: inset 0 0 15px maroon, inset 0 0 5px 1px #080202; */
+  
    color: white;
    background-color: rgb(51, 113, 228);
    /* font-size: 18px; */
    font-weight: 600;
-   /* font-family: 'wellfleet'; */
-   /* transition: all 0.5s; */
+
 }
-/* .form_block .submit:hover{
-   box-shadow: inset 0 0 15px 5px maroon, inset 0 0 5px 2px #080202;
+
+
+/* .row{
+   height: 470px !important;
 } */
-/* .form_block .submit:focus{
-   box-shadow: inset 0 0 15px 10px maroon, inset 0 0 5px 2px #080202;
-   border: none;
-   background-color: rgb(141, 100, 85);
-   color: white;
+.fluid{
+   height: 471px !important;
+}
+.form-check-label{
+   margin-left: 25px;
+}
+.form-check-input{
+   margin-left: 8px;
+}
+/* .card{
+   height: 471px;
 } */

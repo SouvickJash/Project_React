@@ -3,13 +3,12 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { register } from "../../../../src/Redux/AuthSlice";
 import { useDispatch } from "react-redux";
-import '../Register/Reg.css';
+import "../Register/Reg.css";
 // import { HashLoader } from "react-spinners";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
-
 
 export default function Reg() {
   const [loading, setLoading] = useState(true); //loading
@@ -17,11 +16,11 @@ export default function Reg() {
   const { registerTo } = useSelector((state) => state.Auth);
   const dispatch = useDispatch();
   const [passwordType, setPasswordType] = useState("password");
-  const TogglePasswordType = () => {
-    passwordType === "password"
-      ? setPasswordType("text")
-      : setPasswordType("password");
-  };
+  // const togglePasswordType = () => {
+  //   setPasswordType((prevType) =>
+  //     prevType === "password" ? "text" : "password"
+  //   );
+  // };
 
   // redirect
   const handleRedirect = () => {
@@ -175,50 +174,172 @@ export default function Reg() {
   }
 
   return (
-    <div id="register">
-      <div className="container">
-        <ToastContainer />
-        <form className="pt-3 px-5 pb-5 form_block" onSubmit={inputSubmit}>
-          <h2>Registration Page</h2>
+    // <div id="register">
+    //   <div className="container">
+    //     <ToastContainer />
+    //     <form className="pt-3 px-5 pb-5 form_block" onSubmit={inputSubmit}>
+    //       <h2>Registration Page</h2>
 
-          <div class="form-group text-start mb-2">
-            <input
-              type="text"
-              name="first_name"
-              value={input.first_name}
-              onChange={inputChange}
-              class="form-control"
-              id="first_name"
-              placeholder="First name"
-            />
-            <span className="errorMsg">{error?.first_name}</span>
+    //       <div class="form-group text-start mb-2">
+    //         <input
+    //           type="text"
+    //           name="first_name"
+    //           value={input.first_name}
+    //           onChange={inputChange}
+    //           class="form-control"
+    //           id="first_name"
+    //           placeholder="First name"
+    //         />
+    //         <span className="errorMsg">{error?.first_name}</span>
+    //       </div>
+    //       <div class="form-group text-start mb-2">
+    //         <input
+    //           type="text"
+    //           name="last_name"
+    //           value={input.last_name}
+    //           onChange={inputChange}
+    //           class="form-control"
+    //           id="last_name"
+    //           placeholder="Last name"
+    //         />
+    //         <span className="errorMsg">{error?.last_name}</span>
+    //       </div>
+    //       <div class="form-group text-start mb-2">
+    //         <input
+    //           type="text"
+    //           name="email"
+    //           value={input.email}
+    //           onChange={inputChange}
+    //           class="form-control"
+    //           id="email"
+    //           placeholder="Email"
+    //         />
+    //         <span className="errorMsg">{error?.email}</span>
+    //       </div>
+    //       <div class="form-group text-start mb-2">
+    //         <input
+    //           type={passwordType}
+    //           name="password"
+    //           value={input.password}
+    //           onChange={inputChange}
+    //           class="form-control"
+    //           id="password"
+    //           placeholder="Password"
+    //         />
+    //         <span className="errorMsg">{error?.password}</span>
+    //       </div>
+    //       <div class="mb-3 form-check text-start tick">
+    //         <input
+    //           onClick={TogglePasswordType}
+    //           type="checkbox"
+    //           class="form-check-input"
+    //           id="exampleCheck1"
+    //         />
+    //         <label class="form-check-label" for="exampleCheck1">
+    //           Show Password
+    //         </label>
+    //       </div>
+
+    //       <div className="text-left">
+    //         <button
+    //           type="submit"
+    //           class="btn form-control rounded-pill btn-sm submit"
+    //         >
+    //           Submit
+    //         </button>
+    //       </div>
+    //       <div className="text-center">
+    //         <pre className="register">
+    //           Already have account?
+    //           <Link to="/login"> Sign in</Link>
+    //         </pre>
+    //       </div>
+    //     </form>
+    //   </div>
+    // </div>
+
+    <section className="background-radial-gradient overflow-hidden">
+      {" "}
+      \ 4321
+      <div className="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+        <div className="row gx-lg-5 align-items-center mb-5">
+          <div className="col-lg-6 mb-5 mb-lg-0" style={{ zIndex: 10 }}>
+            <h1
+              className="my-5 display-5 fw-bold ls-tight"
+              style={{ color: "hsl(218, 81%, 95%)" }}
+            >
+              Kolkata <br />
+              <span style={{ color: "hsl(218, 81%, 75%)" }}>
+                {" "}
+                is the capital of India's West Bengal state
+              </span>
+            </h1>
           </div>
-          <div class="form-group text-start mb-2">
-            <input
-              type="text"
-              name="last_name"
-              value={input.last_name}
-              onChange={inputChange}
-              class="form-control"
-              id="last_name"
-              placeholder="Last name"
+          <div className="col-lg-6 mb-5 mb-lg-0 position-relative">
+            <div
+              id="radius-shape-1"
+              className="position-absolute rounded-circle shadow-5-strong"
             />
-            <span className="errorMsg">{error?.last_name}</span>
-          </div>
-          <div class="form-group text-start mb-2">
-            <input
-              type="text"
-              name="email"
-              value={input.email}
-              onChange={inputChange}
-              class="form-control"
-              id="email"
-              placeholder="Email"
+            <div
+              id="radius-shape-2"
+              className="position-absolute shadow-5-strong"
             />
-            <span className="errorMsg">{error?.email}</span>
-          </div>
-          <div class="form-group text-start mb-2">
-            <input
+            <div className="card bg-glass">
+              <div className="card-body px-4 py-5 px-md-5">
+                <form onSubmit={inputSubmit}>
+                  {/* 2 column grid layout with text inputs for the first and last names */}
+                  <div className="row">
+                    <div className="col-md-6 mb-4">
+                      <div className="form-outline">
+                        {/* <input type="text" id="form3Example1" className="form-control" placeholder="First name"/> */}
+                        <input
+                          type="text"
+                          name="first_name"
+                          value={input.first_name}
+                          onChange={inputChange}
+                          class="form-control"
+                          id="first_name"
+                          placeholder="First name"
+                        />
+                      </div>
+                      <span className="errorMsg">{error?.first_name}</span>
+                    </div>
+                    <div className="col-md-6 mb-4">
+                      <div className="form-outline">
+                        {/* <input type="text" id="form3Example2" className="form-control" placeholder="Last name"/> */}
+                        <input
+                          type="text"
+                          name="last_name"
+                          value={input.last_name}
+                          onChange={inputChange}
+                          class="form-control"
+                          id="last_name"
+                          placeholder="Last name"
+                        />
+                      </div>
+                      <span className="errorMsg">{error?.last_name}</span>
+                    </div>
+                  </div>
+
+                  {/* Email input */}
+                  <div className="form-outline mb-5">
+                    {/* <input type="email" id="form3Example3" className="form-control" placeholder="Email address"/> */}
+                    <div>
+                      <input
+                        type="text"
+                        name="email"
+                        value={input.email}
+                        onChange={inputChange}
+                        class="form-control"
+                        id="email"
+                        placeholder="Email"
+                      />
+                      <span className="errorMsg">{error?.email}</span>
+                    </div>
+                  </div>
+                  {/* Password input */}
+                  <div className="form-outline mb-4">
+                  <input
               type={passwordType}
               name="password"
               value={input.password}
@@ -228,36 +349,46 @@ export default function Reg() {
               placeholder="Password"
             />
             <span className="errorMsg">{error?.password}</span>
+                    {/* <label className="form-label" htmlFor="form3Example4">Password</label> */}
+                  </div>
+                  {/* Checkbox */}
+                  <div className="form-check d-flex justify-content-center mb-4">
+                    {/* <input className="form-check-input me-2" type="checkbox" defaultValue id="form2Example33" defaultChecked /> */}
+                    {/* <label className="form-check-label" htmlFor="form2Example33">
+                    Subscribe to our newsletter
+                  </label> */}
+                  </div>
+                  {/* <div>
+                      <input
+                        type="checkbox"
+                        className="form-check-input"
+                        id="exampleCheck1"
+                        onClick={togglePasswordType}
+                      />
+                      <label
+                        className="form-check-label"
+                        htmlFor="exampleCheck1"
+                      >
+                        Show Password
+                      </label>
+                    </div> */}
+                  {/* Submit button */}
+                  <button type="submit" className="btn btn-dark btn-block mb-4">
+                    Sign up
+                  </button>
+                  {/* Register buttons */}
+                  <p className="mb-5 pb-lg-3" style={{ color: "#393f81" }}>
+                    You have an account?{" "}
+                    <Link to="/login" style={{ color: "#bf245d" }}>
+                      LogIn
+                    </Link>
+                  </p>
+                </form>
+              </div>
+            </div>
           </div>
-          <div class="mb-3 form-check text-start tick">
-            <input
-              onClick={TogglePasswordType}
-              type="checkbox"
-              class="form-check-input"
-              id="exampleCheck1"
-            />
-            <label class="form-check-label" for="exampleCheck1">
-              Show Password
-            </label>
-          </div>
-
-          <div className="text-left">
-            <button
-              type="submit"
-              class="btn form-control rounded-pill btn-sm submit"
-            >
-              Submit
-            </button>
-          </div>
-          <div className="text-center">
-            <pre className="register">
-              Already have account?
-              <Link to="/login"> Sign in</Link>
-            </pre>
-          </div>
-        </form>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
-
