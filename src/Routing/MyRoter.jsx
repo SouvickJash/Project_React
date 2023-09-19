@@ -42,9 +42,10 @@ const MyRoter = () => {
       children
     ) : (
       <>
+      {toast.error("First you can Login")}
         <Navigate to="/login" />
         {/* {alert("Please go for login either you can't access product list")} */}
-        {toast.error("First you can Login")}
+        
       </>
     );
   }

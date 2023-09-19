@@ -17,6 +17,7 @@ export default function EditData() {
   const { id } = useParams();
   const dispatch = useDispatch();
 
+  const [loading,setLoading]=useState(true)
   const [img, setImg] = useState();
   const navigate = useNavigate();
   const [input, setInput] = useState({
@@ -118,51 +119,43 @@ export default function EditData() {
 
   //  useEffect(()=>{xyz()},[redirectTo])
 
+
+  setTimeout(() => {
+    setLoading(false);
+  }, 1000);
+  if (loading) {
+    return (
+      <>
+    <div class="loader">
+  <svg
+    stroke="currentColor"
+    fill="currentColor"
+    stroke-width="0"
+    viewBox="0 0 24 24"
+    class="h-12 w-12 flex-shrink-0 spin"
+    height="1em"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M2 11h5v2H2zm15 0h5v2h-5zm-6 6h2v5h-2zm0-15h2v5h-2zM4.222 5.636l1.414-1.414 3.536 3.536-1.414 1.414zm15.556 12.728-1.414 1.414-3.536-3.536 1.414-1.414zm-12.02-3.536 1.414 1.414-3.536 3.536-1.414-1.414zm7.07-7.071 3.536-3.535 1.414 1.415-3.536 3.535z"></path>
+  </svg>
+</div>
+
+      </>
+    );
+  }
+
   return (
-    <div id="register">
-      <div className="container">
-        <ToastContainer />
-        <form className="pt-3 px-5 pb-5 form_block">
-          <h2>Form page</h2>
 
-          <div class="form-group text-start mb-2">
-            <input
-              type="text"
-              name="title"
-              value={input.title}
-              onChange={inputChange}
-              class="form-control"
-              id="title"
-              placeholder="Title"
-            />
-            <span className="errorMsg">{error?.title}</span>
-          </div>
-          <div class="form-group text-start mb-2">
-            <textarea
-              cols="3"
-              rows="3"
-              type="text"
-              name="description"
-              value={input.description}
-              onChange={inputChange}
-              class="form-control"
-              id="description"
-              placeholder="Description"
-            ></textarea>
-            <span className="errorMsg">{error?.description}</span>
-          </div>
 
-          <div class="form-group text-start mb-3">
-            <input
-              type="file"
-              name="img"
-              onChange={(e) => setImg(e.target.files[0])}
-              accept="image/*"
-              class="form-control img_file"
-            />
-            {/* <span className='errorMsg'>{error?.image}</span> */}
-
-            {img !== "" && img !== undefined && img !== null ? (
+    <section className="vh-100" style={{ backgroundColor: "#d5d8db" }}>
+    <div className="container py-5 h-100">
+      <div className="row d-flex justify-content-center align-items-center h-100">
+        <div className="col col-xl-10">
+          <div className="card" style={{ borderRadius: "1rem" }}>
+            <div className="row g-0">
+              <div className="col-md-6 col-lg-5 d-none d-md-block">
+              {img !== "" && img !== undefined && img !== null ? (
               <img
                 height="40px"
                 src={URL.createObjectURL(img)}
@@ -184,20 +177,75 @@ export default function EditData() {
               </>
             )}
             {img === "" && <p>Drag or drop content here</p>}
-          </div>
+     
+              </div>
+              <div className="col-md-6 col-lg-7 d-flex align-items-center">
+                <div className="card-body p-4 p-lg-5 text-black">
+                  <form>
+                    <div className="d-flex align-items-center mb-3 pb-1">
+                      <i
+                        className="fas fa-cubes fa-2x me-3"
+                        style={{ color: "#ff6219" }}
+                      />
+                    </div>
+                    <h5
+                      className="fw-normal mb-3 pb-3"
+                      style={{ letterSpacing: 1 }}
+                    >
+                      Create into your account
+                    </h5>
+                    <div className="form-outline mb-4">
+                      <input
+                        type="text"
+                        name="title"
+                        value={input.title}
+                        onChange={inputChange}
+                        class="form-control"
+                        id="title"
+                        placeholder="Title"
+                      />
+                      <span className="errorMsg">{error?.title}</span>
+                    </div>
 
-      
-          <div className="text-left">
-            <button
-              type="submit"
-              onClick={inputSubmit}
-              class="btn form-control rounded-pill btn-sm submit"
-            >
-              Submit
-            </button>
+                    <div className="form-outline mb-4">
+                      <textarea
+                        cols="3"
+                        rows="3"
+                        type="text"
+                        name="description"
+                        value={input.description}
+                        onChange={inputChange}
+                        class="form-control"
+                        id="description"
+                        placeholder="Description"
+                      ></textarea>
+                      <span className="errorMsg">{error?.description}</span>
+                    </div>
+                    <input
+                      type="file"
+                      onChange={(e) => setImg(e.target.files[0])}
+                      name="image"
+                      accept="image/*"
+                      class="form-control"
+                    />
+
+                    <div className="pt-1 mb-4">
+                      <button
+                        className="btn btn-dark btn-lg btn-block"
+                        type="button"
+                        onClick={inputSubmit}
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
-        </form>
+        </div>
       </div>
     </div>
+  </section>
   );
 }

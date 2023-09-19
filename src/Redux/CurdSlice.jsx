@@ -54,6 +54,7 @@ export const CrudSlice = createSlice({
     cleardata:()=>{localStorage.removeItem("title");
       // state.created=false;
     },
+    
     reset:(state,{payload})=>{
       state.redirectTo=payload;
     }

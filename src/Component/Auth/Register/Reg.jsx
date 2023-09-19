@@ -166,9 +166,21 @@ export default function Reg() {
   if (loading) {
     return (
       <>
-        <div class="spinner-border text-primary" role="status">
-          <span class="sr-only">Loading...</span>
-        </div>
+    <div class="loader">
+  <svg
+    stroke="currentColor"
+    fill="currentColor"
+    stroke-width="0"
+    viewBox="0 0 24 24"
+    class="h-12 w-12 flex-shrink-0 spin"
+    height="1em"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M2 11h5v2H2zm15 0h5v2h-5zm-6 6h2v5h-2zm0-15h2v5h-2zM4.222 5.636l1.414-1.414 3.536 3.536-1.414 1.414zm15.556 12.728-1.414 1.414-3.536-3.536 1.414-1.414zm-12.02-3.536 1.414 1.414-3.536 3.536-1.414-1.414zm7.07-7.071 3.536-3.535 1.414 1.415-3.536 3.535z"></path>
+  </svg>
+</div>
+
       </>
     );
   }
@@ -326,6 +338,7 @@ export default function Reg() {
                     {/* <input type="email" id="form3Example3" className="form-control" placeholder="Email address"/> */}
                     <div>
                       <input
+                      
                         type="text"
                         name="email"
                         value={input.email}

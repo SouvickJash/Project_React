@@ -1,6 +1,12 @@
 .upload-img{
-   margin-left: 4px !important;
+   margin-left: 40px !important;
    border-radius: 15px;
-   margin-top: 6px !important;
-   width: 300px;
+   margin-top: 70px !important;
+   width: 350px;
+   height: 200px !important;
+   border: 2px solid rgb(4, 3, 3);
+}
+.card{
+   border: 1px solid rgb(63, 145, 16);
+   border-radius: 10px;
 }
